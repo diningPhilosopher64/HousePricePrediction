@@ -1,0 +1,25 @@
+To fill a column based on discrete probability distribuitions :
+
+from scipy.stats import rv_discrete 
+
+
+values = numpy.array([1.1, 2.2, 3.3])
+probabilities = [0.2, 0.5, 0.3]
+
+distrib = rv_discrete(values=(range(len(values)), probabilities))  # This defines a Scipy probability distribution
+distrib.rvs(size=10)
+
+
+--------------------
+
+
+To convert a column to categorical :
+
+all_data['PoolQC'] = pd.Categorical(all_data.PoolQC)
+
+
+-----------------
+
+To find index of a row where a column value matches :
+
+print(all_data.index[all_data['PoolQC'] != 'None'])
