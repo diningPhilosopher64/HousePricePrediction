@@ -1,3 +1,4 @@
+
 To fill a column based on discrete probability distribuitions :
 
 from scipy.stats import rv_discrete 
@@ -23,3 +24,35 @@ all_data['PoolQC'] = pd.Categorical(all_data.PoolQC)
 To find index of a row where a column value matches :
 
 print(all_data.index[all_data['PoolQC'] != 'None'])
+
+
+-----------------
+-
+To get the index of a numpy array where a specific condition is met :
+
+# x is the numpy array 
+# dont use x.argwhere. use np.argwhere(x  > 0)
+np.argwhere(x > 0)  # returns a list of indices where the condition is met
+
+-------------------
+
+Numpy first occurrence of value greater than existing value
+
+np.argmax(aa>5)
+
+
+-----------------
+
+#To print specific cells of a column or print  values of a particular row and a specific column 
+
+#first seperate those columns and then use .iloc
+
+filtered_data = all_data['PoolQC']
+
+#to filter multiple columns
+
+filtered_data = all_data[['PoolQC','PoolWater']]
+
+------------------
+
+++ , -- operators dont work in python you have to use a += 1
